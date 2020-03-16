@@ -1,13 +1,14 @@
-#Linguagem de programaÁ„o utilizada: Python
 
-print("Programa da TransferÍncia entre usu·rios")
+#Linguagem de programa√ß√£o utilizada: Python
+
+print("Programa da Transfer√™ncia entre usu√°rios")
 
 opcao = 'a'
-usuarios = [] #Vari·vel que vai armazenar os usuarios
+usuarios = [] #Vari√°vel que vai armazenar os usuarios
 saldos = [] #Armazena os saldos
 senhas = [] #Armazana as senhas
 tam_l = 0
-temporaria = 'temp' # vari·vel que vai armazenar de forma tempor·rios os dados
+temporaria = 'temp' # vari√°vel que vai armazenar de forma tempor√°rios os dados
 origem = 0
 destino = 0
 transf = 0
@@ -15,14 +16,14 @@ transf = 0
 while opcao != '0':
 
     print("\nMenu:") #Meno do programa
-    print(" 1 - Cadastrar usu·rio")
+    print(" 1 - Cadastrar usu√°rio")
     print(" 2 - Imprimir saldos")
     print(" 3 - Transferir valores")
     print(" 0 - Sair do programa")
-    opcao = input("\nDigite a opÁ„o: ")
+    opcao = input("\nDigite a op√ß√£o: ")
 
-    if opcao == '1': #Cadastrar usu·rios
-        temporaria = input("Digite o nome do usu·rio:")
+    if opcao == '1': #Cadastrar usu√°rios
+        temporaria = input("Digite o nome do usu√°rio:")
         usuarios.append(temporaria)
         temporaria = ''
         temporaria = input("Digite uma senha")
@@ -31,51 +32,51 @@ while opcao != '0':
             temporaria = input("Digite uma senha")
         senhas.append(temporaria)
         saldos.append(100)
-        print("Usu·rio cadastrado com sucesso")
+        print("Usu√°rio cadastrado com sucesso")
         #input("Pressione ENTER para continuar")
 
-    if opcao == '2': #Imprimir a relaÁ„o de usu·rios
+    if opcao == '2': #Imprimir a rela√ß√£o de usu√°rios
         tam_l = len(usuarios)
         if(tam_l < 1):
-            print("N„o existe usu·rios cadastrados")
+            print("N√£o existe usu√°rios cadastrados")
         else:
-            print("Item:\t Usu·rio:\t Saldo")
+            print("Item:\t Usu√°rio:\t Saldo")
             for i in range(0, tam_l):
                 print(i+1,"\t\t", usuarios[i],"\t", saldos[i])
         #input("\nPressione ENTER para continuar")
 
-    if opcao == '3': #Realizar transferÍncias
+    if opcao == '3': #Realizar transfer√™ncias
         tam_l = len(usuarios)
         if (tam_l < 1):
-            print("N„o existe usu·rios cadastrados")
+            print("N√£o existe usu√°rios cadastrados")
         else:
-            print("CÛdigo:\t Usu·rio:")
+            print("C√≥digo:\t Usu√°rio:")
             for i in range(0, tam_l):
                 print(i + 1, "\t\t", usuarios[i])
 
-            origem = int(input("\nEscolha o cÛdigo do usu·rio que ir· ENVIAR o valor"))
+            origem = int(input("\nEscolha o c√≥digo do usu√°rio que ir√° ENVIAR o valor"))
 
             while ((origem < 1) or (origem > tam_l)):
-                print("OpÁ„o inv·lida")
-                origem = int(input("\nEscolha o cÛdigo do usu·rio que ir· ENVIAR o valor"))
+                print("Op√ß√£o inv√°lida")
+                origem = int(input("\nEscolha o c√≥digo do usu√°rio que ir√° ENVIAR o valor"))
             temporaria = ''
             temporaria = input("Digite a senha")
             while (temporaria != senhas[origem-1]):
-                print("Senha inv·lida")
+                print("Senha inv√°lida")
                 temporaria = input("Digite a senha")
-            print("Usu·rio de envio = ",usuarios[origem-1], "\t","Saldo atual = ", saldos[origem-1])
+            print("Usu√°rio de envio = ",usuarios[origem-1], "\t","Saldo atual = ", saldos[origem-1])
             if (saldos[origem-1] == 0):
-                print("VocÍ n„o possui saldo")
+                print("Voc√™ n√£o possui saldo")
             else:
-                print("\nRelaÁ„o de destinos:")
+                print("\nRela√ß√£o de destinos:")
                 for i in range(0, tam_l):
                     if(i != origem-1):
                         print(i+1,"\t\t", usuarios[i])
 
-                destino = int(input("\nEscolha o cÛdigo do usuario que ir· RECEBER o valor"))
+                destino = int(input("\nEscolha o c√≥digo do usuario que ir√° RECEBER o valor"))
                 while ((destino < 1) or (destino > tam_l) or (destino == origem)):
-                    print("OpÁ„o inv·lida")
-                    destino = int(input("\nEscolha o cÛdigo do usuario que ir· RECEBER o valor"))
+                    print("Op√ß√£o inv√°lida")
+                    destino = int(input("\nEscolha o c√≥digo do usuario que ir√° RECEBER o valor"))
 
                 transf = int(input("Digite o valor a transferir"))
                 while (transf > saldos[origem-1]):
@@ -87,6 +88,6 @@ while opcao != '0':
                 print("Valor transferido com sucesso")
 
     if opcao == '0':
-        print("O programa ser· encerrado")
+        print("O programa ser√° encerrado")
 
 print("Programa encerrado com sucesso")
