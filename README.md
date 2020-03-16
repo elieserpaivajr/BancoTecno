@@ -1,2 +1,0 @@
-# BancoTecno
-Aplicaçao de teste
